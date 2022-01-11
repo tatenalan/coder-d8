@@ -21,7 +21,7 @@ class ProductController {
 
     insert(product) {
         return this.knex('products').insert(product, "id")
-        .then((product) => {console.log("product inserted", product[0]); return {id: product[0], title:product.title, price:product.price, thumbnail:product.thumbnail}})
+        .then((product) => {console.log("product inserted", product[0]); return product[0].toString();})
         .catch((err) => { console.log(err); throw new ServiceException(500, "Error") })
         .finally(() => {knex.destroy();});
     }

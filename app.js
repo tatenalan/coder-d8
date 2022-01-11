@@ -7,7 +7,6 @@ const handlebars = require('express-handlebars');
 const { Server: HttpServer } = require('http');
 const { Server: IOServer } = require('socket.io');
 const { options } = require('./options/MariaDB.js');
-const { response } = require('express');
 const knex = require('knex')(options)
 const knexProducts = new ProductController(knex, 'products')
 
